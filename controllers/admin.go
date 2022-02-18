@@ -61,7 +61,6 @@ func (c *AdminController) List() {
 	c.ServeJSON()
 }
 func (c *AdminController) Create() {
-	//注意这个引用写法会不会导致高并发下,添加的数据都用同一个指针内存地址,而导致数据共享覆盖问题
 	admin := &models.Admin{}
 	admin.Username = c.GetString("username")
 	admin.Email = c.GetString("username")
